@@ -1,0 +1,82 @@
+* {
+font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+font-size: 13px;
+border: none;
+border-radius: 0;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #c6d0f5;
+}
+
+window#waybar.bottom #workspaces button {
+    padding: 0 10px;
+    color: #c6d0f5;
+}
+
+window#waybar.bottom #workspaces button.active {
+    background-color: rgba(122, 162, 247, 0.1);
+    border-bottom: 3px solid #7aa2f7;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#custom-theme,
+#custom-arch-button {
+padding: 0 12px;
+color: #c6d0f5;
+}
+
+#custom-arch-button {
+color: #99d1db;
+font-size: 16px;
+}
+
+#custom-theme {
+color: #99d1db;
+}
+
+#clock {
+font-weight: bold;
+color: #7aa2f7;
+}
+
+#custom-arch-button:hover,
+#custom-theme:hover,
+#clock:hover {
+background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* El botón de búsqueda */
+#custom-search {
+background: rgba(45, 45, 45, 0.6); /* Color oscuro tipo Windows */
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 4px;
+margin: 5px 10px;
+padding: 0 15px;
+color: #d8dee9;
+}
+
+/* El botón de Arch (Inicio) */
+#custom-arch-button {
+font-size: 20px;
+margin-left: 5px;
+color: #81a1c1;
+}
+
+/* Espaciado de los iconos de la derecha */
+#clock, #pulseaudio, #network, #battery, #tray {
+padding: 0 10px;
+margin: 0 2px;
+}
+
+/* Tooltip redondo (El fix que querías) */
+tooltip {
+    border-radius: 10px;
+    background-color: #2e3440;
+    border: 1px solid #88c0d0;
+}

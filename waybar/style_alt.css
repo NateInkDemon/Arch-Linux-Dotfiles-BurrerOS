@@ -1,0 +1,49 @@
+window#waybar {
+    background: transparent;
+}
+
+#custom-arch,
+#workspaces,
+#clock,
+#custom-updates,
+#tray,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery,
+#custom-theme,
+#custom-power {
+background-color: rgba(43, 48, 59, 0.9);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 12px;
+padding: 0px 8px;
+margin: 2px 3px;
+color: #88c0d0;
+font-size: 13px;
+}
+
+#clock {
+color: #ebcb8b;
+font-weight: bold;
+padding: 0px 10px;
+}
+
+#workspaces {
+padding: 0px 5px;
+}
+
+#workspaces button {
+padding: 0 3px;
+font-size: 12px;
+color: #4c566a;
+}
+
+#workspaces button.active {
+color: #81a1c1;
+}
+
+tooltip {
+    border-radius: 10px;
+    background-color: #2e3440;
+    font-size: 12px;
+}

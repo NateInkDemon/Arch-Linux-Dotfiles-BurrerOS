@@ -1,0 +1,57 @@
+{
+  "$schema": "/etc/swaync/config.schema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-width": 450,
+  "control-center-height": 850,
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "cache-scrollbar": true,
+  "hide-on-clear": false,
+  "widgets": [
+    "title",
+    "dnd",
+    "mpris",
+    "volume",
+    "backlight",
+    "buttons-grid",
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notificaciones",
+      "clear-all-button": true,
+      "button-text": "Limpiar"
+    },
+    "dnd": {
+      "text": "No molestar"
+    },
+    "volume": {
+      "label": "󰕾",
+      "show-per-app": true
+    },
+    "backlight": {
+      "label": "󰃠",
+      "sublabel": "Brillo",
+      "device": "intel_backlight"
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰗽",
+          "command": "bash /home/jpablo/.config/hypr/scripts/powermenu.sh"
+        },
+        {
+          "label": "󰕾",
+          "command": "pavucontrol-qt"
+        },
+        {
+          "label": "󰑐",
+          "command": "swaync-client -R && swaync-client -rs"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+window {
+    background: rgba(17, 17, 27, 0.9);
+    border-radius: 12px;
+    border: 2px solid #55ccff;
+}
+
+#container {
+    padding: 10px;
+}
+
+progress, trough {
+    background-color: rgba(255, 255, 255, 0.1);
+    min-height: 10px;
+    min-width: 200px;
+    border-radius: 5px;
+}
+
+progressbar, highlight {
+    background-color: #55ccff;
+    border-radius: 5px;
+}
+
+label {
+    color: #55ccff;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+image {
+    display: none;
+}

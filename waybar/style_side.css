@@ -1,0 +1,60 @@
+@define-color azul_neon #55ccff;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px; /* Tamaño base */
+    border: none;
+    padding: 0;
+}
+
+window#waybar {
+    background: rgba(17, 17, 27, 0.9);
+    border: 2px solid @azul_neon;
+    border-radius: 20px;
+}
+
+/* Centrado de módulos */
+#workspaces, #clock, #pulseaudio, #network, #battery, #custom-arch-button {
+    margin: 8px 0;
+    min-width: 42px;
+}
+
+/* --- TAMAÑOS INDIVIDUALES PARA NIVELAR --- */
+
+#pulseaudio {
+    font-size: 17px; /* El volumen suele verse bien aquí */
+    color: #ffffff;
+}
+
+#network {
+    font-size: 14px; /* Bajamos el Wi-Fi que suele ser muy "gordo" */
+    color: #ffffff;
+}
+
+#battery {
+    font-size: 14px; /* Bajamos la batería para que no se vea gigante */
+    color: #ffffff;
+}
+
+/* El reloj un poco más pequeño para que el AM/PM no rompa la cápsula */
+#clock {
+    font-weight: bold;
+    font-size: 10px;
+    color: @azul_neon;
+    margin-bottom: 12px;
+}
+
+#custom-arch-button {
+    color: @azul_neon;
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+#workspaces button {
+    color: rgba(255, 255, 255, 0.2);
+    margin: 3px 0;
+}
+
+#workspaces button.active {
+    color: @azul_neon;
+}

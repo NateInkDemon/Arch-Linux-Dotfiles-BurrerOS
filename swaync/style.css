@@ -1,0 +1,90 @@
+@define-color bg-color rgba(26, 27, 38, 0.9);
+@define-color main-blue #7aa2f7;
+@define-color main-cyan #b4f9f8;
+@define-color shadow-blue rgba(122, 162, 247, 0.4);
+
+.control-center {
+    background: @bg-color;
+    border: 2px solid @main-blue;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 0 20px 2px @shadow-blue;
+}
+
+.widget-title > label {
+    color: @main-blue;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.widget-title > button {
+    background: rgba(122, 162, 247, 0.1);
+    color: white;
+    border-radius: 8px;
+    border: 1px solid @main-blue;
+    padding: 5px 10px;
+}
+
+.widget-buttons-grid {
+    padding: 10px;
+    margin: 5px;
+}
+
+.widget-buttons-grid > box > button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 12px;
+    color: @main-blue;
+    margin: 5px;
+    padding: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.widget-buttons-grid > box > button:hover {
+    background: rgba(122, 162, 247, 0.2);
+    border: 1px solid @main-cyan;
+    color: @main-cyan;
+    box-shadow: 0 0 10px 0 @shadow-blue;
+}
+
+.widget-volume, .widget-backlight {
+    margin: 10px;
+    padding: 5px;
+}
+
+trough {
+    background: rgba(255, 255, 255, 0.1);
+    min-height: 12px;
+    border-radius: 10px;
+}
+
+highlight {
+    background: @main-blue;
+    border-radius: 10px;
+}
+
+.widget-mpris {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid @main-blue;
+}
+
+.widget-mpris-title {
+    color: @main-blue;
+    font-size: 1.1rem;
+}
+
+.widget-mpris-subtitle {
+    color: @main-cyan;
+}
+
+.notification {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(122, 162, 247, 0.2);
+    border-radius: 12px;
+    color: white;
+    margin: 5px;
+}

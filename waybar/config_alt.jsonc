@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 8,
+
+    "modules-left": ["custom/arch", "hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/updates", "tray", "pulseaudio", "bluetooth", "network", "battery", "custom/theme", "custom/power"],
+
+    "custom/arch": {
+        "format": "<span color='#7aa2f7'></span>",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    },
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "all-outputs": true,
+        "format": "{icon}",
+        "disable-scroll": true,
+        "active-only": false,
+        "format-icons": {
+            "default": "<span color='#565f89'></span>",
+            "active": "<span color='#bb9af7'></span>",
+            "urgent": "<span color='#f7768e'>󰀨</span>"
+        }
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    "custom/updates": {
+        "format": "<span color='#e0af68'>󰚰 {}</span>",
+        "escape": true,
+        "return-type": "json",
+        "exec": "/home/jpablo/.config/waybar/scripts/check_updates.sh",
+        "restart-interval": 600,
+        "on-click": "bash /home/jpablo/.config/rofi/scripts/rofi-install.sh 2",
+        "tooltip": true
+    },
+
+    "clock": {
+        "format": "<span color='#7aa2f7'> {:%I:%M %p}</span>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+
+    "pulseaudio": {
+        "format": "<span color='#9ece6a'>{icon} {volume}%</span>",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "swaync-client -t -sw"
+    },
+
+    "bluetooth": {
+        "format": "<span color='#7aa2f7'></span>",
+        "on-click": "blueman-manager"
+    },
+
+"network": {
+        "format-wifi": "<span color='#b4f9f8' font='11'> </span>",
+        "format-ethernet": "<span color='#b4f9f8' font='11'>󰈀 </span>",
+        "format-disconnected": "<span color='#f7768e' font='11'>󰖪 </span>",
+        "tooltip-format": "{essid} {signalStrength}%",
+        "on-click": "kitty --class floating_tui -e nmtui"
+    },
+
+    "battery": {
+        "format": "<span color='#ff9e64'>{icon} {capacity}%</span>",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/theme": {
+        "format": "<span color='#bb9af7'>󱔗</span>",
+        "on-click": "bash /home/jpablo/.config/waybar/scripts/switch_waybar.sh",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": "<span color='#f7768e'></span>",
+        "on-click": "bash /home/jpablo/.config/hypr/scripts/powermenu.sh",
+        "tooltip": false
+    }
+}

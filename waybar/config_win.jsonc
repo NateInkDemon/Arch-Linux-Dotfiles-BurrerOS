@@ -1,0 +1,89 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 40,
+    "margin-bottom": 0,
+    "exclusive": true,
+    "gtk-layer-shell": true,
+
+    "modules-left": [
+        "custom/arch-button",
+        "custom/search"
+    ],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "tray",
+        "custom/updates",
+        "pulseaudio",
+        "network",
+        "battery",
+        "clock",
+        "custom/theme"
+    ],
+
+    "custom/arch-button": {
+        "format": " 󰣇 ",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+
+    "custom/search": {
+        "format": " 󰍉 Escribe aquí para buscar",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+
+    "custom/updates": {
+        "format": "󰚰 {}",
+        "escape": true,
+        "return-type": "json",
+        "restart-interval": 1800,
+        "on-click": "bash /home/jpablo/.config/waybar/scripts/check_updates.sh",
+        "tooltip": true
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace r+1",
+        "on-scroll-down": "hyprctl dispatch workspace r-1",
+        "persistent-workspaces": { "*": 5 }
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "swaync-client -t -sw"
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{essid} {signalStrength}%",
+        "on-click": "kitty --class floating_tui -e nmtui"
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format": " {:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "custom/theme": {
+        "format": "󱔗",
+        "on-click": "bash /home/jpablo/.config/waybar/scripts/switch_waybar.sh"
+    }
+}

@@ -1,0 +1,133 @@
+configuration {
+    modi:                       "drun,filebrowser,combi,instalar:/home/jpablo/.config/rofi/scripts/rofi-install.sh";
+    combi-modi:                 "drun,filebrowser";
+    show-icons:                  true;
+    display-drun:                "❄️ APPS";
+    display-filebrowser:         "📂 ARCHIVOS";
+    display-combi:               "🔍 TODO";
+    display-instalar:            "📥 INSTALAR";
+
+    drun-display-format:         "{name} [<span weight='light' size='small'><i>({category})</i></span>]";
+    drun-match-fields:           "name,generic,categories,executable";
+
+    filebrowser {
+        directory: "/home/jpablo";
+        directories-first: true;
+        sorting-method: "name";
+    }
+
+    kb-row-select: "";
+    kb-row-tab: "";
+    kb-complete: "";
+    kb-element-next: "";
+    kb-element-prev: "";
+    kb-row-up: "Up,Control+p";
+
+    kb-mode-next: "Tab";
+    kb-mode-previous: "ISO_Left_Tab";
+}
+
+* {
+    bg-base:     rgba(15, 17, 20, 0.85);
+    bg-surface:  rgba(255, 255, 255, 0.05);
+    fg-main:      #eceff4;
+    fg-dim:       #aeb3bb;
+    accent:       #88c0d0;
+    font: "JetBrainsMono Nerd Font 11";
+    background-color: transparent;
+    text-color: @fg-main;
+}
+
+window {
+    width:               450px;
+    background-color: @bg-base;
+    border:             2px;
+    border-color:       @accent;
+    border-radius:      15px;
+    location:           center;
+    anchor:             center;
+}
+
+mainbox {
+    children: [inputbar, listview, mode-switcher];
+}
+
+inputbar {
+    padding:           20px;
+    background-color: @bg-surface;
+    children:          [prompt, entry];
+    border-radius:    15px 15px 0 0;
+}
+
+prompt {
+    text-color: @accent;
+    margin:     0 10px 0 0;
+}
+
+entry {
+    text-color: @fg-main;
+    placeholder: "Buscar app o categoría...";
+    placeholder-color: @fg-dim;
+}
+
+listview {
+    columns:      1;
+    lines:        8;
+    padding:      10px;
+    fixed-height: true;
+    scrollbar:    false;
+}
+
+mode-switcher {
+    spacing: 0;
+    margin: 0 10px 10px 10px;
+}
+
+button {
+    padding: 5px;
+    background-color: @bg-surface;
+    text-color: @fg-dim;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: rgba(136, 192, 208, 0.2);
+  text-color: @accent;
+  border-radius: 5px;
+}
+
+element {
+    padding:       10px;
+    border-radius: 10px;
+    spacing:       10px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+    markup:           true;
+}
+
+element-icon {
+    size: 24px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg-main;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg-main;
+}
+
+element selected.normal {
+    background-color: rgba(136, 192, 208, 0.3);
+    text-color: @accent;
+    border: 1px;
+    border-color: @accent;
+}

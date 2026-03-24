@@ -1,0 +1,63 @@
+window#waybar {
+    background-color: rgba(26, 27, 38, 0.9);
+    border-bottom: 2px solid #7dcfff; /* Cian de la imagen */
+    color: #c0caf5;
+    font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 13px;
+}
+
+#workspaces,
+#clock,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery,
+#tray,
+#custom-arch,
+#custom-theme,
+#custom-power {
+padding: 0 10px;
+margin: 0px;
+}
+
+#custom-arch {
+color: #7dcfff; /* El mismo cian */
+font-size: 16px;
+}
+
+#workspaces button {
+padding: 0 8px;
+color: #4c566a;
+}
+
+#workspaces button.active {
+color: #88c0d0;
+border-bottom: 2px solid #88c0d0;
+}
+
+#clock {
+color: #7dcfff;
+background: rgba(122, 162, 247, 0.1);
+border-radius: 8px;
+margin: 4px 0px;
+}
+
+#custom-updates, #tray {
+background: #24283b;
+border-radius: 8px;
+margin: 4px;
+}
+
+#custom-power {
+color: #f7768e;
+background: #24283b;
+border-radius: 8px;
+margin: 4px;
+}
+
+#custom-theme {
+color: #99d1db;
+background: #24283b;
+border-radius: 8px;
+margin: 4px;
+}
