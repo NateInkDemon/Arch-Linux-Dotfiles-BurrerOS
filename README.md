@@ -12,37 +12,53 @@ Guia rapida para el que se lo acaba de instalar:
 
 # Atajos de Teclado (Keybinds)
 
-# La tecla Super (o tecla Windows) es la base de todos los comandos.
+La tecla Super (o tecla Windows) es la base de todos los comandos.
 
 # -Lanzadores y Apps-
 
-Super + Enter	Abrir Terminal (Kitty)
-Super + D	Menú de Aplicaciones (Rofi)
-Super + B	Navegador Web (Firefox)
+Super + Enter	Abrir Terminal
+
+Super + D	Menú de Aplicaciones
+Super + B	Navegador Web (Firefox o el que se te antoje)
+
 Super + E	Explorador de Archivos (Thunar)
-Super + M	Reproductor de Música (rmpc)
-Super + G	Selector de Emojis (Rofimoji)
-Super + Esc	Menú de Apagado/Salida (Powermenu)
+
+Super + M	Reproductor de Música (uso rmpc pero puede ser cualquiera)
+
+Super + G	Selector de Emojis
+
+Super + Esc	Menú de Apagado/Salida
 
 # -Gestión de Ventanas-
 
 Super + Q	Cerrar ventana
+
 Super + T	Cambiar entre modo de ventanas (de ordenarse solas a unas tipo windows)
+
 Super + F	Pantalla completa
+
 Super + Shift + Flechas	Mover ventana de area de trabajo
+
 Super + Click Izq	Arrastrar ventana (Mantener presionado)
+
 Super + Click Der	Redimensionar ventana (Mantener presionado)
 
 # -Utilidades del Sistema-
 
 Super + W	Cambiar Fondo de Pantalla aleatoriamente
+
 Super + O	Cambiar estilo de la Waybar
+
 Super + V	Historial del Portapapeles
+
 Super + Print	Captura de pantalla completa
+
 Super + Shift + S	Captura de pantalla a un area seleccionada
 
 # -Control de volumen y brillo-
 
 F1	Silenciar Audio (Mute)
+
 F2 / F3	Bajar / Subir Volumen
+
 F11 / F12	Bajar / Subir Brillo
