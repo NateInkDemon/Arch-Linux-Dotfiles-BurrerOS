@@ -1,12 +1,15 @@
-window#waybar {
-    background-color: rgba(26, 27, 38, 0.9);
-    border-bottom: 2px solid #7dcfff; /* Cian de la imagen */
-    color: #c0caf5;
+* {
     font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 13px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#workspaces,
+window#waybar {
+    background-color: rgba(26, 27, 38, 0.9);
+    border-bottom: 2px solid #7dcfff;
+    color: #c0caf5;
+}
+
 #clock,
 #pulseaudio,
 #bluetooth,
@@ -14,50 +17,63 @@ window#waybar {
 #battery,
 #tray,
 #custom-arch,
+#custom-updates,
 #custom-theme,
 #custom-power {
-padding: 0 10px;
-margin: 0px;
+background: rgba(122, 162, 247, 0.1);
+color: #7dcfff;
+border-radius: 12px;
+padding: 0 12px;
+margin: 4px 3px;
+border: 1px solid rgba(124, 207, 255, 0.1);
+}
+
+#clock:active,
+#pulseaudio:active,
+#bluetooth:active,
+#network:active,
+#battery:active,
+#custom-arch:active,
+#custom-updates:active,
+#custom-theme:active,
+#custom-power:active {
+background: rgba(124, 207, 255, 0.3);
+margin: 6px 5px;
+padding: 0 8px;
 }
 
 #custom-arch {
-color: #7dcfff; /* El mismo cian */
 font-size: 16px;
+background: transparent;
+border: none;
+}
+
+#workspaces {
+background: rgba(122, 162, 247, 0.05);
+border-radius: 12px;
+margin: 4px;
 }
 
 #workspaces button {
 padding: 0 8px;
 color: #4c566a;
+border-radius: 10px;
 }
 
 #workspaces button.active {
 color: #88c0d0;
-border-bottom: 2px solid #88c0d0;
-}
-
-#clock {
-color: #7dcfff;
-background: rgba(122, 162, 247, 0.1);
-border-radius: 8px;
-margin: 4px 0px;
-}
-
-#custom-updates, #tray {
-background: #24283b;
-border-radius: 8px;
-margin: 4px;
+background: rgba(124, 207, 255, 0.15);
+padding: 0 16px;
 }
 
 #custom-power {
 color: #f7768e;
-background: #24283b;
-border-radius: 8px;
-margin: 4px;
 }
 
 #custom-theme {
 color: #99d1db;
+}
+
+#tray {
 background: #24283b;
-border-radius: 8px;
-margin: 4px;
 }
