@@ -6,16 +6,8 @@
     "exclusive": true,
 
     "modules-left": ["custom/arch-button", "hyprland/workspaces"],
-    "modules-right": ["custom/updates", "pulseaudio", "network", "battery", "clock"],
-
-    "custom/updates": {
-        "format": "󰚰\n{}",
-        "escape": true,
-        "return-type": "json",
-        "restart-interval": 1800,
-        "on-click": "bash /home/jpablo/.config/waybar/scripts/check_updates.sh",
-        "tooltip": true
-    },
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery"],
 
     "hyprland/workspaces": {
         "orientation": "vertical",
@@ -28,7 +20,12 @@
 
     "clock": {
         "format": "{:%I\n%M\n%p}",
-        "tooltip": false
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
     },
 
     "pulseaudio": {
