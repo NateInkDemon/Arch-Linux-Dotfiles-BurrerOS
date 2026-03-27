@@ -1,8 +1,7 @@
 @define-color azul_neon #55ccff;
-
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 14px; /* Tamaño base */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     padding: 0;
 }
@@ -11,50 +10,95 @@ window#waybar {
     background: rgba(17, 17, 27, 0.9);
     border: 2px solid @azul_neon;
     border-radius: 20px;
+    box-shadow: 0 0 10px rgba(85, 204, 255, 0.2);
 }
 
-/* Centrado de módulos */
-#workspaces, #clock, #pulseaudio, #network, #battery, #custom-arch-button {
-    margin: 8px 0;
-    min-width: 42px;
+#workspaces,
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#custom-arch-button,
+#tray {
+margin: 8px 0;
+min-width: 42px;
 }
 
-/* --- TAMAÑOS INDIVIDUALES PARA NIVELAR --- */
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#clock:hover,
+#custom-arch-button:hover,
+#tray:hover {
+color: #ffffff;
+text-shadow: 0 0 8px @azul_neon, 0 0 12px @azul_neon;
+background: rgba(85, 204, 255, 0.1);
+border-radius: 12px;
+}
+
+#pulseaudio:active,
+#network:active,
+#battery:active,
+#custom-arch-button:active {
+background: @azul_neon;
+color: #11111b;
+margin: 12px 0;
+padding: 5px 0;
+}
 
 #pulseaudio {
-    font-size: 17px; /* El volumen suele verse bien aquí */
-    color: #ffffff;
+font-size: 17px;
+color: #ffffff;
 }
 
 #network {
-    font-size: 14px; /* Bajamos el Wi-Fi que suele ser muy "gordo" */
-    color: #ffffff;
+font-size: 14px;
+color: #ffffff;
 }
 
 #battery {
-    font-size: 14px; /* Bajamos la batería para que no se vea gigante */
-    color: #ffffff;
+font-size: 14px;
+color: #ffffff;
 }
 
-/* El reloj un poco más pequeño para que el AM/PM no rompa la cápsula */
 #clock {
-    font-weight: bold;
-    font-size: 10px;
-    color: @azul_neon;
-    margin-bottom: 12px;
+font-weight: bold;
+font-size: 10px;
+color: @azul_neon;
 }
 
 #custom-arch-button {
-    color: @azul_neon;
-    font-size: 18px;
-    margin-top: 12px;
+color: @azul_neon;
+font-size: 18px;
+margin-top: 12px;
+}
+
+#tray {
+padding: 5px 0;
+}
+
+#tray > .passive {
+-gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+-gtk-icon-effect: highlight;
+background-color: #f7768e;
 }
 
 #workspaces button {
-    color: rgba(255, 255, 255, 0.2);
-    margin: 3px 0;
+color: rgba(255, 255, 255, 0.2);
+margin: 3px 0;
+transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+#workspaces button:hover {
+color: #ffffff;
+background: transparent;
 }
 
 #workspaces button.active {
-    color: @azul_neon;
+color: @azul_neon;
+text-shadow: 0 0 5px @azul_neon;
+font-size: 16px;
 }
