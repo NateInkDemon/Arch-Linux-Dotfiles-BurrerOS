@@ -1,8 +1,7 @@
 * {
-font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
-font-size: 13px;
-border: none;
-border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, padding 0.2s ease-in-out;
 }
 
 window#waybar {
@@ -10,14 +9,23 @@ window#waybar {
     color: #c6d0f5;
 }
 
-window#waybar.bottom #workspaces button {
-    padding: 0 10px;
-    color: #c6d0f5;
+#workspaces button {
+padding: 0 10px;
+color: #c6d0f5;
+background-color: transparent;
+border-bottom: 3px solid transparent;
 }
 
-window#waybar.bottom #workspaces button.active {
-    background-color: rgba(122, 162, 247, 0.1);
-    border-bottom: 3px solid #7aa2f7;
+#workspaces button.active {
+background-color: rgba(122, 162, 247, 0.1);
+color: #7aa2f7;
+border-bottom: 3px solid #7aa2f7;
+}
+
+#workspaces button:hover {
+background-color: rgba(255, 255, 255, 0.05);
+box-shadow: none;
+text-shadow: none;
 }
 
 #clock,
@@ -25,19 +33,18 @@ window#waybar.bottom #workspaces button.active {
 #network,
 #bluetooth,
 #battery,
+#tray,
 #custom-theme,
 #custom-arch-button {
 padding: 0 12px;
-color: #c6d0f5;
+margin: 0 2px;
 }
 
-#custom-arch-button {
-color: #99d1db;
-font-size: 16px;
-}
-
-#custom-theme {
-color: #99d1db;
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#custom-theme:hover {
+background-color: rgba(255, 255, 255, 0.1);
 }
 
 #clock {
@@ -45,15 +52,17 @@ font-weight: bold;
 color: #7aa2f7;
 }
 
-#custom-arch-button:hover,
-#custom-theme:hover,
-#clock:hover {
-background-color: rgba(255, 255, 255, 0.05);
+#custom-arch-button {
+color: #81a1c1;
+font-size: 16px;
 }
 
-/* El botón de búsqueda */
+#custom-theme {
+color: #99d1db;
+}
+
 #custom-search {
-background: rgba(45, 45, 45, 0.6); /* Color oscuro tipo Windows */
+background-color: rgba(45, 45, 45, 0.6);
 border: 1px solid rgba(255, 255, 255, 0.1);
 border-radius: 4px;
 margin: 5px 10px;
@@ -61,22 +70,12 @@ padding: 0 15px;
 color: #d8dee9;
 }
 
-/* El botón de Arch (Inicio) */
-#custom-arch-button {
-font-size: 20px;
-margin-left: 5px;
-color: #81a1c1;
-}
-
-/* Espaciado de los iconos de la derecha */
-#clock, #pulseaudio, #network, #battery, #tray {
-padding: 0 10px;
-margin: 0 2px;
-}
-
-/* Tooltip redondo (El fix que querías) */
 tooltip {
     border-radius: 10px;
     background-color: #2e3440;
     border: 1px solid #88c0d0;
+}
+
+tooltip label {
+    padding: 5px;
 }
