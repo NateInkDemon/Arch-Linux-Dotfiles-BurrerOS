@@ -6,7 +6,7 @@ https://github.com/user-attachments/assets/de633afb-4b78-4e70-afed-e29e4f35922e
 
 
 
-Es un sistema relativamente rapido, ojo tiene muchos efectos capaz y si se los queres cambiar para que te vaya mas rapido podes, pero corre bien con 16gb de RAM y me imagino que tambien de perlas con 8gb de RAM, me la paso actualizandolo asi q si ven algo en el video y luego se lo descargan y es diferente bueno ya saben pq es XD
+Es un sistema relativamente rapido, ojo tiene muchos efectos capaz y si se los queres cambiar para que te vaya mas rapido podes, pero corre bien con 16gb de RAM y me imagino que tambien de perlas con 8gb de RAM, me la paso actualizandolo asi q si ven algo en el video y luego se lo descargan y es diferente bueno ya saben pq es XD, si tienen dudas o no saben porque no funciona algo del sistema este es mi instagram y tengo los DMs abiertos: juan_pollo_307
 
 Guia rapida para el que se lo acaba de instalar:
 
