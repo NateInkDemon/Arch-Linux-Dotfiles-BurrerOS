@@ -1,24 +1,43 @@
 {
-  "$schema": "/etc/swaync/config.schema.json",
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+
   "positionX": "right",
   "positionY": "top",
-  "layer": "overlay",
-  "control-center-width": 450,
-  "control-center-height": 850,
   "control-center-margin-top": 10,
   "control-center-margin-bottom": 10,
   "control-center-margin-right": 10,
-  "cache-scrollbar": true,
-  "hide-on-clear": false,
+  "control-center-margin-left": 10,
+  "control-center-width": 450,
+  "control-center-height": 800,
+  "fit-to-screen": false,
+
+  "layer": "overlay",
+  "control-center-layer": "overlay",
+  "cssPriority": "user",
+  "notification-window-width": 400,
+  "notification-icon-size": 64,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "timeout": 8,
+  "timeout-low": 4,
+  "timeout-critical": 0,
+  "transition-time": 250,
+  "hide-on-clear": true,
+  "hide-on-action": true,
+
+  "notification-visibility": {
+    "keylock": false,
+    "caps-lock": false,
+    "num-lock": false
+  },
+
   "widgets": [
     "title",
     "dnd",
     "mpris",
-    "volume",
-    "backlight",
-    "buttons-grid",
     "notifications"
   ],
+
   "widget-config": {
     "title": {
       "text": "Notificaciones",
@@ -28,30 +47,12 @@
     "dnd": {
       "text": "No molestar"
     },
-    "volume": {
-      "label": "󰕾",
-      "show-per-app": true
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 12
     },
-    "backlight": {
-      "label": "󰃠",
-      "sublabel": "Brillo",
-      "device": "intel_backlight"
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": "󰗽",
-          "command": "bash /home/jpablo/.config/hypr/scripts/powermenu.sh"
-        },
-        {
-          "label": "󰕾",
-          "command": "pavucontrol-qt"
-        },
-        {
-          "label": "󰑐",
-          "command": "swaync-client -R && swaync-client -rs"
-        }
-      ]
+    "notifications": {
+      "vexpand": true
     }
   }
 }
