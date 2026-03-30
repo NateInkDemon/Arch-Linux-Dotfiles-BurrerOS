@@ -1,0 +1,53 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 42,
+    "margin": "10 0 10 10",
+    "exclusive": true,
+
+    "modules-left": ["custom/arch-button", "hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "pulseaudio", "network", "battery"],
+
+    "hyprland/workspaces": {
+        "orientation": "vertical",
+        "format": "{icon}",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "clock": {
+        "format": "{:%I\n%M\n%p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-icons": { "default": ["󰕾"] },
+        "on-click": "swaync-client -t -sw"
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "on-click": "kitty --class floating_tui -e nmtui"
+    },
+
+    "battery": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/arch-button": {
+        "format": "󰣇",
+        "on-click": "rofi -show drun"
+    }
+}

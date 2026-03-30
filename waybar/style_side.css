@@ -1,0 +1,107 @@
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
+@define-color azul_neon @color4;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    padding: 0;
+}
+
+window#waybar {
+    background: @background;
+    border: 2px solid @azul_neon;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+#workspaces,
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#custom-arch-button,
+#tray {
+margin: 8px 0;
+min-width: 42px;
+}
+
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#clock:hover,
+#custom-arch-button:hover,
+#tray:hover {
+color: #ffffff;
+text-shadow: 0 0 8px @azul_neon, 0 0 12px @azul_neon;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 12px;
+}
+
+#pulseaudio:active,
+#network:active,
+#battery:active,
+#custom-arch-button:active {
+background: @azul_neon;
+color: @background;
+margin: 12px 0;
+padding: 5px 0;
+}
+
+#pulseaudio {
+font-size: 17px;
+color: @foreground;
+}
+
+#network {
+font-size: 14px;
+color: @foreground;
+}
+
+#battery {
+font-size: 14px;
+color: @foreground;
+}
+
+#clock {
+font-weight: bold;
+font-size: 10px;
+color: @azul_neon;
+}
+
+#custom-arch-button {
+color: @azul_neon;
+font-size: 18px;
+margin-top: 12px;
+}
+
+#tray {
+padding: 5px 0;
+}
+
+#tray > .passive {
+-gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+-gtk-icon-effect: highlight;
+background-color: @color1;
+}
+
+#workspaces button {
+color: rgba(255, 255, 255, 0.2);
+margin: 3px 0;
+transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+#workspaces button:hover {
+color: @foreground;
+background: transparent;
+}
+
+#workspaces button.active {
+color: @azul_neon;
+text-shadow: 0 0 5px @azul_neon;
+font-size: 16px;
+}

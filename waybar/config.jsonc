@@ -1,0 +1,74 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "spacing": 4,
+
+    "modules-left": ["custom/arch", "hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "pulseaudio", "bluetooth", "network", "battery", "custom/theme", "custom/power"],
+
+    "custom/arch": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "rofi -show drun -display-drun '❄️ Apps'"
+    },
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "all-outputs": true,
+        "format": "{icon}",
+        "disable-scroll": true,
+        "active-only": false,
+        "format-icons": {
+            "default": "",
+            "active": "",
+            "urgent": "󰀨"
+        }
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+"clock": {
+        "format": " {:%I:%M %p}",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "swaync-client -t -sw"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "on-click": "blueman-manager"
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "on-click": "kitty --class floating_tui -e nmtui"
+    },
+
+    "battery": {
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", ""],
+    "on-click": "~/.config/rofi/scripts/power_profiles.sh",
+    "tooltip": false
+    },
+    "custom/theme": {
+        "format": "󱔗",
+        "on-click": "bash /home/jpablo/.config/waybar/scripts/switch_waybar.sh",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": "  ",
+        "on-click": "bash /home/jpablo/.config/hypr/scripts/powermenu.sh",
+        "tooltip": false
+    }
+}

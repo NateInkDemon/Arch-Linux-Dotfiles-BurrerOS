@@ -1,0 +1,100 @@
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Arial", sans-serif;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+window#waybar {
+    background: transparent;
+}
+
+/* Forzamos el color en los módulos Y en sus etiquetas de texto internas */
+#custom-arch,
+#workspaces,
+#custom-updates,
+#tray,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery,
+#custom-theme,
+#custom-arch label,
+#tray label,
+#pulseaudio label,
+#bluetooth label,
+#network label,
+#battery label,
+#custom-theme label {
+background-color: @background;
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 12px;
+padding: 0px 10px;
+margin: 4px 3px;
+color: @color4; /* Color de acento unificado */
+font-size: 13px;
+}
+
+/* EXCEPCIÓN 1: Reloj (Texto e Icono en color3) */
+#clock, #clock label {
+background-color: @background;
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 12px;
+padding: 0px 10px;
+margin: 4px 3px;
+color: @color3;
+font-weight: bold;
+}
+
+/* EXCEPCIÓN 2: Power (Color1) */
+#custom-power, #custom-power label {
+background-color: @background;
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 12px;
+padding: 0px 10px;
+margin: 4px 3px;
+color: @color1;
+}
+
+/* Ajuste para que los iconos dentro de los módulos también cambien */
+#pulseaudio, #network, #battery, #bluetooth {
+color: @color4;
+}
+
+/* HOVERS mejorados */
+#clock:hover,
+#custom-arch:hover,
+#pulseaudio:hover,
+#network:hover,
+#custom-theme:hover,
+#custom-power:hover {
+background-color: @color4;
+color: @background;
+}
+
+/* WORKSPACES */
+#workspaces {
+padding: 0px 5px;
+background-color: rgba(0, 0, 0, 0.4);
+border-radius: 12px;
+margin: 4px 3px;
+}
+
+#workspaces button {
+padding: 0 5px;
+font-size: 12px;
+color: @color7;
+}
+
+#workspaces button.active {
+color: @color4;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 8px;
+}
+
+tooltip {
+    border-radius: 10px;
+    background-color: @background;
+    border: 1px solid @color4;
+    color: @foreground;
+}
