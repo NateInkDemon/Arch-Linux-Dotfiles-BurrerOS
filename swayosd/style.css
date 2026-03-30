@@ -1,31 +1,43 @@
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
 window {
-    background: rgba(17, 17, 27, 0.9);
-    border-radius: 12px;
-    border: 2px solid #55ccff;
+    background: transparent;
 }
 
 #container {
-    padding: 10px;
+background-color: rgba(0, 0, 0, 0.8);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 12px;
+padding: 12px 20px;
 }
 
-progress, trough {
-    background-color: rgba(255, 255, 255, 0.1);
+box {
+    padding: 2px;
+}
+
+#icon {
+color: @color4;
+font-size: 22px;
+margin-right: 15px;
+}
+
+trough {
+    background: rgba(255, 255, 255, 0.1);
     min-height: 10px;
     min-width: 200px;
     border-radius: 5px;
 }
 
-progressbar, highlight {
-    background-color: #55ccff;
+progress {
+    background: @color4;
     border-radius: 5px;
 }
 
-label {
-    color: #55ccff;
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-image {
-    display: none;
+#label {
+color: @foreground;
+font-family: "JetBrainsMono Nerd Font";
+font-size: 14px;
+font-weight: bold;
+margin-left: 15px;
+min-width: 40px;
 }
