@@ -1,90 +1,91 @@
-@define-color bg-color rgba(26, 27, 38, 0.9);
-@define-color main-blue #7aa2f7;
-@define-color main-cyan #b4f9f8;
-@define-color shadow-blue rgba(122, 162, 247, 0.4);
+#ojo que esto de aqui es para que cambie de colores junto al wallpaper, necesitan pywall (o algo asi se llamaba XD)
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
+:root {
+  --border-radius: 20px;
+  --cc-bg: transparent;
+
+  --widget-background: rgba(0, 0, 0, 0.7);
+  --noti-bg-alpha: 0.6;
+
+  --accent-color: @color4;
+  --padding: calc(var(--border-radius) / 2);
+
+  --border: 2px solid var(--accent-color);
+}
 
 .control-center {
-    background: @bg-color;
-    border: 2px solid @main-blue;
-    border-radius: 20px;
-    padding: 15px;
-    margin: 10px;
-    box-shadow: 0 0 20px 2px @shadow-blue;
+  border-radius: 22px;
+  background: rgba(0, 0, 0, 0.4);
+  margin: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.widgets > .widget,
+.widget-mpris > carouselindicatordots,
+.widget-mpris > box > button {
+  background: var(--widget-background);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  border: var(--border);
+  color: @foreground;
 }
 
 .widget-title > label {
-    color: @main-blue;
-    font-size: 1.3rem;
-    font-weight: bold;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+.control-center-list-placeholder {
+  padding: var(--border-radius);
+  color: @color7;
+}
+
+.notification-group {
+  border-radius: var(--border-radius);
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.widget.widget-mpris {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+}
+
+.widget.widget-mpris > carouselindicatordots {
+  --dots-padding: 4px;
+  padding: var(--dots-padding);
+  background: var(--accent-color);
+  margin-top: var(--padding);
+}
+
+.widget-mpris > box > button {
+  color: var(--accent-color);
+}
+
+.widget-mpris > box > button:hover {
+  background: var(--accent-color);
+  color: @background;
+}
+
+.widget-mpris-player {
+  box-shadow: none;
+  border: var(--border);
+  background: var(--widget-background);
+  border-radius: var(--border-radius);
+  margin: 0 var(--padding);
+}
+
+.widget-mpris-player:only-child {
+  margin: 0;
 }
 
 .widget-title > button {
-    background: rgba(122, 162, 247, 0.1);
-    color: white;
-    border-radius: 8px;
-    border: 1px solid @main-blue;
-    padding: 5px 10px;
-}
-
-.widget-buttons-grid {
-    padding: 10px;
-    margin: 5px;
-}
-
-.widget-buttons-grid > box > button {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(122, 162, 247, 0.3);
-    border-radius: 12px;
-    color: @main-blue;
-    margin: 5px;
-    padding: 15px;
-    transition: all 0.2s ease-in-out;
-}
-
-.widget-buttons-grid > box > button:hover {
-    background: rgba(122, 162, 247, 0.2);
-    border: 1px solid @main-cyan;
-    color: @main-cyan;
-    box-shadow: 0 0 10px 0 @shadow-blue;
-}
-
-.widget-volume, .widget-backlight {
-    margin: 10px;
-    padding: 5px;
-}
-
-trough {
-    background: rgba(255, 255, 255, 0.1);
-    min-height: 12px;
-    border-radius: 10px;
-}
-
-highlight {
-    background: @main-blue;
-    border-radius: 10px;
-}
-
-.widget-mpris {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 15px;
-    margin: 10px;
-    border: 1px solid @main-blue;
-}
-
-.widget-mpris-title {
-    color: @main-blue;
-    font-size: 1.1rem;
-}
-
-.widget-mpris-subtitle {
-    color: @main-cyan;
-}
-
-.notification {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(122, 162, 247, 0.2);
-    border-radius: 12px;
-    color: white;
-    margin: 5px;
+  background: var(--accent-color);
+  color: @background;
+  border-radius: 10px;
+  padding: 5px 10px;
 }
