@@ -11,6 +11,10 @@ if [ -f "$WALLPAPER" ]; then
     awww img "$WALLPAPER" --resize crop --transition-type outer --transition-step 60
 
     wal -i "$WALLPAPER" -n -q
+
+    killall -SIGUSR2 waybar
+
+    echo "Wallpaper y colores del wallpaper aplicados: $(basename "$WALLPAPER")"
 else
-    echo "Error: No hay wallpapers en ~/Wallpapers"
+    echo "Error: No encontré imágenes en ~/Wallpapers"
 fi
