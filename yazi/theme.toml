@@ -1,0 +1,14 @@
+[manager]
+border_style = { fg = "blue" }
+
+[status]
+separator_open  = ""
+separator_close = ""
+
+[filetype]
+rules = [
+    { mime = "image/*", fg = "cyan" },
+    { mime = "video/*", fg = "magenta" },
+    { mime = "audio/*", fg = "yellow" },
+    { mime = "text/*",  fg = "white" },
+]

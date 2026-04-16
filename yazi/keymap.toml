@@ -1,0 +1,19 @@
+[manager]
+keymap = [
+    { on = [ "q" ], run = "quit", desc = "Salir" },
+    { on = [ "<Esc>" ], run = "escape", desc = "Escapar" },
+
+    # Navegación (Flechas o HJKL como en Vim)
+    { on = [ "k" ], run = "arrow -1", desc = "Subir" },
+    { on = [ "j" ], run = "arrow 1", desc = "Bajar" },
+    { on = [ "h" ], run = "leave", desc = "Atrás" },
+    { on = [ "l" ], run = "enter", desc = "Entrar / Abrir" },
+
+    # Acciones de Archivos
+    { on = [ "d" ], run = "remove", desc = "Borrar" },
+    { on = [ "c" ], run = "copy",   desc = "Copiar" },
+    { on = [ "x" ], run = "cut",    desc = "Cortar" },
+    { on = [ "p" ], run = "paste",  desc = "Pegar" },
+    { on = [ "n" ], run = "create", desc = "Nuevo archivo" },
+    { on = [ "r" ], run = "rename", desc = "Renombrar" },
+]
