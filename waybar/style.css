@@ -1,0 +1,76 @@
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
+@define-color bg_bar rgba(15, 15, 20, 0.65);
+@define-color bg_hover rgba(255, 255, 255, 0.1);
+@define-color accent @color4;
+@define-color text @foreground;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NFP";
+    font-weight: 600;
+    font-size: 13px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+window#waybar {
+    background: @bg_bar;
+    color: @text;
+    border-radius: 20px;
+    border: 2px solid @accent;
+}
+
+#workspaces button {
+color: rgba(255, 255, 255, 0.3);
+padding: 0 8px;
+margin: 4px 3px;
+border-bottom: 3px solid transparent;
+}
+
+#workspaces button.active {
+color: @accent;
+border-bottom: 3px solid @accent;
+border-radius: 2px;
+}
+
+#workspaces button.urgent {
+color: #ff5555;
+}
+
+#custom-arch, #cpu, #memory, #tray,
+#clock, #mpd, #pulseaudio, #bluetooth, #custom-notification,
+#network, #battery, #custom-power {
+padding: 0 10px;
+background: transparent;
+color: @accent;
+}
+
+#pulseaudio:hover, #network:hover, #battery:hover, #cpu:hover, #memory:hover,
+#custom-notification:hover, #tray:hover, #clock:hover, #bluetooth:hover, #mpd:hover {
+background: @bg_hover;
+border-radius: 10px;
+}
+
+#clock {
+color: @text;
+}
+
+#custom-arch {
+font-size: 20px;
+padding-left: 15px;
+}
+
+#custom-power {
+color: #ff5555;
+padding-right: 15px;
+}
+
+tooltip {
+    background: @background;
+    border: 1px solid @accent;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @text;
+}

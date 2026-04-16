@@ -1,0 +1,139 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "mod": "dock",
+    "exclusive": true,
+    "gtk-layer-shell": true,
+    "margin-bottom": -1,
+    "passthrough": false,
+    "height": 41,
+
+    "modules-left": [
+        "custom/os_button",
+        "hyprland/workspaces",
+        "wlr/taskbar"
+    ],
+    "modules-center": [
+        "mpd"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "custom/notification",
+        "tray",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "battery",
+        "clock",
+        "custom/power"
+    ],
+
+    "custom/os_button": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "rofi -show drun -display-drun '❄️ Apps'"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "default": "",
+            "active": "",
+            "urgent": "󰀨"
+        }
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon} {title:.17}",
+        "icon-size": 20,
+        "spacing": 3,
+        "on-click-middle": "close",
+        "tooltip-format": "{title}",
+        "on-click": "activate"
+    },
+
+    "mpd": {
+        "format": "{stateIcon} {artist} - {title}",
+        "format-disconnected": "󰎆 Desconectado",
+        "format-stopped": "󰎆 Detenido",
+        "state-icons": {
+            "paused": "󰏤",
+            "playing": "󰎆"
+        },
+        "tooltip-format": "MPD (connected)",
+        "on-click": "gtk-launch rmpc"
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "󰍛 {usage}%",
+        "on-click": "kitty -e htop"
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": "󰾆 {percentage}%",
+        "on-click": "kitty -e htop"
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󱅫",
+            "dnd-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+
+    "pulseaudio": {
+        "max-volume": 150,
+        "scroll-step": 10,
+        "format": "{icon} <span size='small'>{volume}%</span>",
+        "format-muted": "󰝟 <span size='small'>{volume}%</span>",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "pavucontrol"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": "󰂱",
+        "on-click": "blueman-manager"
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-disconnected": "󰖪",
+        "on-click": "kitty --class floating_tui -e nmtui"
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 20 },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format": " {:%I:%M %p}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "bash ~/.config/hypr/scripts/powermenu.sh"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    }
+}

@@ -1,0 +1,108 @@
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
+@define-color bg_bar rgba(15, 15, 20, 0.65);
+@define-color bg_hover rgba(255, 255, 255, 0.1);
+@define-color accent @color4;
+@define-color text @foreground;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 600;
+    border: none;
+    margin: 0;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+window#waybar {
+    background-color: @bg_bar;
+    color: @text;
+    border-radius: 16px;
+    border: 2px solid @accent;
+}
+
+#custom-arch-button,
+#pulseaudio,
+#network,
+#battery,
+#custom-power,
+#custom-notification,
+#bluetooth,
+#clock,
+#cpu,
+#memory {
+min-width: 42px;
+background: transparent;
+}
+
+#workspaces button {
+color: rgba(255, 255, 255, 0.2);
+font-size: 12px;
+min-width: 42px;
+padding: 8px 0;
+margin: 2px 0;
+border-left: 3px solid transparent;
+}
+
+#workspaces button.active {
+color: @accent;
+border-left: 3px solid @accent;
+border-radius: 2px;
+}
+
+#pulseaudio:hover, #network:hover, #battery:hover, #custom-notification:hover,
+#bluetooth:hover, #clock:hover, #cpu:hover, #memory:hover, #custom-arch-button:hover {
+background: @bg_hover;
+border-radius: 8px;
+}
+
+#custom-arch-button {
+color: @accent;
+font-size: 18px;
+padding: 15px 0;
+}
+
+#pulseaudio, #network, #battery, #custom-notification {
+color: @accent;
+font-size: 13px;
+padding: 8px 0;
+}
+
+#cpu, #memory {
+font-size: 8px;
+color: @accent;
+padding: 4px 0;
+}
+
+#bluetooth {
+color: @accent;
+font-size: 11px;
+padding: 6px 0;
+}
+
+#clock {
+font-size: 11px;
+color: @text;
+padding: 12px 0;
+}
+
+#custom-power {
+color: #f38ba8;
+font-size: 15px;
+padding: 15px 0;
+}
+
+#tray {
+margin: 5px 2px;
+}
+
+tooltip {
+    background: @background;
+    border: 1px solid @accent;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @text;
+    padding: 6px;
+}

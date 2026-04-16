@@ -1,0 +1,101 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 42,
+    "margin": "10 0 10 10",
+    "exclusive": true,
+    "spacing": 0,
+
+    "modules-left": [
+        "custom/arch-button",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/notification"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+
+    "hyprland/workspaces": {
+        "orientation": "vertical",
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "clock": {
+        "format": "{:%I\n%M}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "󰍛\n{usage}%",
+        "tooltip": false
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "󰾆\n{used:0.1f}G",
+        "tooltip": false
+    },
+
+    "custom/notification": {
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󱅫",
+            "dnd-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-icons": { "default": ["󰕾"] },
+        "on-click": "pavucontrol"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "on-click": "blueman-manager"
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-disconnected": "󰖪",
+        "on-click": "kitty --class floating_tui -e nmtui"
+    },
+
+    "battery": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/arch-button": {
+        "format": "󰣇",
+        "on-click": "rofi -show drun"
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "bash ~/.config/hypr/scripts/powermenu.sh"
+    }
+}

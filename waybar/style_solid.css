@@ -1,0 +1,103 @@
+@import "/home/jpablo/.cache/wal/colors-waybar.css";
+
+@define-color bg_main rgba(15, 15, 15, 0.75);
+@define-color bg_hover rgba(255, 255, 255, 0.1);
+@define-color border_accent @color4;
+
+* {
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    font-family: "Segoe UI", "JetBrainsMono Nerd Font";
+    font-weight: 600;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: @bg_main;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: @foreground;
+}
+
+#custom-os_button {
+color: @color4;
+font-size: 22px;
+padding: 0 15px;
+}
+
+#custom-os_button:hover {
+background: @bg_hover;
+}
+
+#workspaces button {
+padding: 0 10px;
+color: rgba(255, 255, 255, 0.3);
+}
+
+#workspaces button.active {
+color: @foreground;
+border-bottom: 3px solid @border_accent;
+}
+
+#taskbar button {
+min-width: 120px;
+border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+margin: 4px 2px;
+padding: 0 10px;
+color: @foreground;
+}
+
+#taskbar button.active {
+background: rgba(255, 255, 255, 0.1);
+border-bottom: 3px solid @border_accent;
+}
+
+#cpu, #memory, #mpd, #custom-notification, #pulseaudio,
+#bluetooth, #network, #battery, #clock, #tray, #custom-power {
+padding: 0 10px;
+margin: 0;
+}
+
+#mpd {
+color: @foreground;
+font-size: 12px;
+}
+
+#cpu, #memory {
+color: @foreground;
+font-size: 12px;
+}
+
+#custom-notification {
+color: @color4;
+}
+
+#bluetooth {
+color: @foreground;
+font-size: 16px;
+}
+
+#clock {
+color: @color4;
+}
+
+#custom-power {
+color: #ff5555;
+font-size: 16px;
+}
+
+#cpu:hover, #memory:hover, #mpd:hover, #custom-notification:hover,
+#pulseaudio:hover, #clock:hover, #network:hover, #battery:hover, #custom-power:hover {
+background: @bg_hover;
+}
+
+tooltip {
+    background: @background;
+    border: 1px solid @color4;
+    border-radius: 5px;
+}
+
+tooltip label {
+    color: @foreground;
+}
