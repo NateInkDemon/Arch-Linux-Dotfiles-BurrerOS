@@ -1,58 +1,102 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-
   "positionX": "right",
   "positionY": "top",
-  "control-center-margin-top": 10,
-  "control-center-margin-bottom": 10,
-  "control-center-margin-right": 10,
-  "control-center-margin-left": 10,
-  "control-center-width": 450,
-  "control-center-height": 800,
+  "control-center-margin-top": 5,
+  "control-center-margin-bottom": 5,
+  "control-center-margin-right": 5,
+  "control-center-margin-left": 5,
+  "control-center-width": 380,
+  "control-center-height": 720,
   "fit-to-screen": false,
-
   "layer": "overlay",
   "control-center-layer": "overlay",
   "cssPriority": "user",
-  "notification-window-width": 400,
-  "notification-icon-size": 64,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 200,
+  "notification-window-width": 300,
+  "notification-icon-size": 48,
   "timeout": 8,
-  "timeout-low": 4,
-  "timeout-critical": 0,
   "transition-time": 250,
   "hide-on-clear": true,
   "hide-on-action": true,
 
   "notification-visibility": {
-    "keylock": false,
-    "caps-lock": false,
-    "num-lock": false
+    "keybind-indicator": false
   },
 
   "widgets": [
     "title",
     "dnd",
+    "buttons-grid",
+    "buttons-grid#scripts",
+    "backlight",
+    "volume",
     "mpris",
     "notifications"
   ],
-
   "widget-config": {
     "title": {
       "text": "Notificaciones",
       "clear-all-button": true,
-      "button-text": "Limpiar"
+      "button-text": "󰆴 Limpiar"
     },
     "dnd": {
       "text": "No molestar"
     },
     "mpris": {
-      "image-size": 96,
+      "image-size": 80,
       "image-radius": 12
     },
-    "notifications": {
-      "vexpand": true
+    "backlight": {
+      "label": "󰃠",
+      "device": "intel_backlight"
+    },
+    "volume": {
+      "label": "󰕾",
+      "show-per-app": true
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "",
+          "command": "bash /home/jpablo/.config/hypr/scripts/powermenu.sh"
+        },
+        {
+          "label": "󰖩",
+          "command": "kitty --class floating_tui -e nmtui"
+        },
+        {
+          "label": "󰂯",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "󰕾",
+          "command": "swayosd-client --output-volume mute-toggle"
+        },
+        {
+          "label": "󰍬",
+          "command": "swayosd-client --input-volume mute-toggle"
+        },
+        {
+          "label": "󰒔",
+          "command": "flatpak run org.localsend.localsend_app"
+        }
+      ]
+    },
+    "buttons-grid#scripts": {
+      "actions": [
+        {
+          "label": "󰓅 Juego",
+          "command": "bash /home/jpablo/.config/swaync/scripts/gamemode.sh"
+        },
+        {
+          "label": "󰃢 Limpiar",
+          "command": "bash /home/jpablo/.config/swaync/scripts/cleanup.sh"
+        },
+        {
+          "label": "󰄨 Info",
+          "command": "kitty --class big_tui -e btop"
+        }
+      ]
     }
   }
 }
