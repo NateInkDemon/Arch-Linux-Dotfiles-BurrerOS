@@ -13,9 +13,7 @@
         "hyprland/workspaces",
         "wlr/taskbar"
     ],
-    "modules-center": [
-        "mpd"
-    ],
+    "modules-center": [],
     "modules-right": [
         "cpu",
         "memory",
@@ -32,7 +30,7 @@
     "custom/os_button": {
         "format": "",
         "tooltip": false,
-        "on-click": "rofi -show drun -display-drun '❄️ Apps'"
+        "on-click": "rofi -show drun -display-drun 'Apps'"
     },
 
     "hyprland/workspaces": {
@@ -54,28 +52,16 @@
         "on-click": "activate"
     },
 
-    "mpd": {
-        "format": "{stateIcon} {artist} - {title}",
-        "format-disconnected": "󰎆 Desconectado",
-        "format-stopped": "󰎆 Detenido",
-        "state-icons": {
-            "paused": "󰏤",
-            "playing": "󰎆"
-        },
-        "tooltip-format": "MPD (connected)",
-        "on-click": "gtk-launch rmpc"
-    },
-
     "cpu": {
         "interval": 10,
         "format": "󰍛 {usage}%",
-        "on-click": "kitty -e htop"
+        "on-click": "kitty -e btop"
     },
 
     "memory": {
         "interval": 10,
         "format": "󰾆 {percentage}%",
-        "on-click": "kitty -e htop"
+        "on-click": "kitty -e btop"
     },
 
     "custom/notification": {
@@ -124,7 +110,6 @@
     "clock": {
         "format": " {:%I:%M %p}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>"
-
     },
 
     "custom/power": {
