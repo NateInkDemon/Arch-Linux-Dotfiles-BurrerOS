@@ -38,39 +38,15 @@ color: #ff5555;
 }
 
 #custom-arch, #cpu, #memory, #tray,
-#clock, #mpd, #pulseaudio, #bluetooth, #custom-notification,
+#clock, #pulseaudio, #bluetooth, #custom-notification,
 #network, #battery, #custom-power {
 padding: 0 10px;
 background: transparent;
-color: @accent;
 }
 
-#pulseaudio:hover, #network:hover, #battery:hover, #cpu:hover, #memory:hover,
-#custom-notification:hover, #tray:hover, #clock:hover, #bluetooth:hover, #mpd:hover {
+#custom-arch:hover, #cpu:hover, #memory:hover,
+#clock:hover, #pulseaudio:hover, #bluetooth:hover, #custom-notification:hover,
+#network:hover, #battery:hover, #custom-power:hover {
 background: @bg_hover;
 border-radius: 10px;
-}
-
-#clock {
-color: @text;
-}
-
-#custom-arch {
-font-size: 20px;
-padding-left: 15px;
-}
-
-#custom-power {
-color: #ff5555;
-padding-right: 15px;
-}
-
-tooltip {
-    background: @background;
-    border: 1px solid @accent;
-    border-radius: 8px;
-}
-
-tooltip label {
-    color: @text;
 }
