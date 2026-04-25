@@ -1,74 +1,53 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
+        "source": "arch_small",
         "padding": {
-            "top": 2
-        },
-        "color": {
-            "1": "blue",
-            "2": "cyan"
+            "top": 1
         }
     },
     "display": {
-        "separator": " ➜  ",
-        "color": {
-            "keys": "cyan"
-        }
+        "separator": "  "
     },
     "modules": [
+        "break",
         "title",
-        "separator",
         {
             "type": "os",
-            "key":  " ",
-            "keyColor": "blue"
+            "key": "󰣇 os    ",
+            "keyColor": "33"
         },
         {
             "type": "kernel",
-            "key": " 󰌆 ",
-            "keyColor": "blue"
+            "key": "󰒋 kernel",
+            "keyColor": "33"
         },
         {
-            "type": "uptime",
-            "key": " 󱎫 ",
-            "keyColor": "blue"
+            "type": "host",
+            "format": "{5} {1}",
+            "key": "󰌢 host  ",
+            "keyColor": "33"
         },
         {
             "type": "packages",
-            "key": " 󰏖 ",
-            "keyColor": "blue"
+            "key": "󰏖 pkgs  ",
+            "keyColor": "33"
         },
         {
-            "type": "display",
-            "key": " 󰍹 ",
-            "keyColor": "blue"
-        },
-        {
-            "type": "wm",
-            "key": "  ",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "terminal",
-            "key": "  ",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "cpu",
-            "key": "  ",
-            "keyColor": "cyan"
-        },
-        {
-            "type": "gpu",
-            "key": " 󰢮 ",
-            "keyColor": "cyan"
+            "type": "uptime",
+            "format": "{2}h {3}m",
+            "key": "󰅐 uptime",
+            "keyColor": "33"
         },
         {
             "type": "memory",
-            "key": " 󰑭 ",
-            "keyColor": "cyan"
+            "key": "󰍛 memory",
+            "keyColor": "33"
         },
         "break",
-        "colors"
+        {
+            "type": "colors",
+            "symbol": "circle"
+        }
     ]
 }
