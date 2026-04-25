@@ -2,33 +2,27 @@
     "layer": "top",
     "position": "left",
     "width": 42,
-    "margin": "10 0 10 10",
+    "margin": "4 0 4 4",
     "exclusive": true,
     "spacing": 0,
 
     "modules-left": [
-        "custom/arch-button",
+        "group/power",
         "hyprland/workspaces"
     ],
+
     "modules-center": [
-        "clock",
-        "custom/notification"
-    ],
-    "modules-right": [
-        "cpu",
-        "memory",
-        "pulseaudio",
-        "bluetooth",
-        "network",
-        "battery",
-        "tray",
-        "custom/power"
+        "clock"
     ],
 
-    "tray": {
-        "icon-size": 16,
-        "spacing": 8
-    },
+    "modules-right": [
+        "group/apps", 
+        "network",
+        "bluetooth",
+        "custom/notification",
+        "group/audio",
+        "battery"
+    ],
 
     "hyprland/workspaces": {
         "orientation": "vertical",
@@ -38,64 +32,128 @@
 
     "clock": {
         "format": "{:%I\n%M}",
-        "tooltip-format": "<tt>{calendar}</tt>"
-    },
-
-    "cpu": {
-        "interval": 5,
-        "format": "󰍛\n{usage}%",
-        "tooltip": false
-    },
-
-    "memory": {
-        "interval": 5,
-        "format": "󰾆\n{used:0.1f}G",
-        "tooltip": false
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "custom/notification": {
+        "tooltip": false,
         "format": "{icon}",
         "format-icons": {
             "notification": "󱅫",
             "none": "󰂚",
             "dnd-notification": "󱅫",
-            "dnd-none": "󰂛"
+            "dnd-none": "󰂛",
+            "inhibited-notification": "󱅫",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "󱅫",
+            "dnd-inhibited-none": "󰂛"
         },
         "return-type": "json",
+        "exec-if": "which swaync-client",
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw",
         "escape": true
     },
 
+    "group/apps": {
+        "orientation": "vertical",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/appmenu",
+            "wlr/taskbar"
+        ]
+    },
+
+    "custom/appmenu": {
+        "format": "󰀻",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-click-right": "close"
+    },
+
+    "group/audio": {
+        "modules": ["pulseaudio", "pulseaudio/slider"],
+        "orientation": "vertical",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        }
+    },
+
     "pulseaudio": {
         "format": "{icon}",
-        "format-icons": { "default": ["󰕾"] },
+        "format-muted": "󰝟",
+        "format-icons": { "default": ["", "󰕾", ""] },
         "on-click": "pavucontrol"
     },
 
-    "bluetooth": {
-        "format": "",
-        "on-click": "blueman-manager"
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "vertical"
     },
 
     "network": {
         "format-wifi": "",
         "format-disconnected": "󰖪",
-        "on-click": "kitty --class floating_tui -e nmtui"
+        "on-click": "kitty -e nmtui"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "on-click": "blueman-manager"
     },
 
     "battery": {
-        "format": "{icon}",
+        "format": "{capacity}\n{icon}",
         "format-icons": ["", "", "", "", ""]
     },
 
-    "custom/arch-button": {
-        "format": "󰣇",
-        "on-click": "rofi -show drun"
+    "group/power": {
+        "modules": [
+            "custom/powerbutton",
+            "custom/lock",
+            "custom/suspend",
+            "custom/reboot"
+        ],
+        "orientation": "vertical",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        }
     },
 
-    "custom/power": {
-        "format": "",
-        "on-click": "bash ~/.config/hypr/scripts/powermenu.sh"
+    "custom/powerbutton": {
+        "format": "⏻",
+        "on-click": "bash ~/.config/hypr/scripts/powermenu.sh",
+        "tooltip": false
+    },
+
+    "custom/reboot": {
+        "format": "󰜉",
+        "on-click": "reboot",
+        "tooltip": false
+    },
+
+    "custom/suspend": {
+        "format": "",
+        "on-click": "systemctl suspend",
+        "tooltip": false
+    },
+
+    "custom/lock": {
+        "format": "󰍁",
+        "on-click": "hyprlock",
+        "tooltip": false
     }
 }
