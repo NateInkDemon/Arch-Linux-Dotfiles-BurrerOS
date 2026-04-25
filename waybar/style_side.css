@@ -1,108 +1,70 @@
 @import "/home/jpablo/.cache/wal/colors-waybar.css";
 
-@define-color bg_bar rgba(15, 15, 20, 0.65);
-@define-color bg_hover rgba(255, 255, 255, 0.1);
+@define-color background-blue rgba(13, 17, 23, 0.9);
 @define-color accent @color4;
-@define-color text @foreground;
 
 * {
-    font-family: "JetBrainsMono Nerd Font";
-    font-weight: 600;
+    font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NFP";
+    font-size: 13px;
     border: none;
-    margin: 0;
-    padding: 0;
-    transition: all 0.2s ease-in-out;
+    box-shadow: none;
 }
 
 window#waybar {
-    background-color: @bg_bar;
-    color: @text;
-    border-radius: 16px;
-    border: 2px solid @accent;
+    background-color: @background-blue;
+    color: @foreground;
+    border-radius: 12px;
 }
 
-#custom-arch-button,
-#pulseaudio,
-#network,
-#battery,
-#custom-power,
-#custom-notification,
-#bluetooth,
-#clock,
-#cpu,
-#memory {
-min-width: 42px;
-background: transparent;
+#custom-powerbutton, 
+#custom-reboot, 
+#custom-suspend, 
+#custom-lock,
+#workspaces, 
+#clock, 
+#network, 
+#bluetooth, 
+#pulseaudio, 
+#battery, 
+#custom-notification, 
+#custom-appmenu {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#custom-notification { color: @color4; }
+#network { color: @color3; }
+#bluetooth { color: @color4; }
+#battery { color: @color2; }
+#clock { color: @color6; font-weight: bold; }
+
+#group-power, #group-audio, #group-apps {
+    margin: 0;
+    padding: 0;
 }
 
 #workspaces button {
-color: rgba(255, 255, 255, 0.2);
-font-size: 12px;
-min-width: 42px;
-padding: 8px 0;
-margin: 2px 0;
-border-left: 3px solid transparent;
+    color: rgba(255, 255, 255, 0.3);
 }
 
 #workspaces button.active {
-color: @accent;
-border-left: 3px solid @accent;
-border-radius: 2px;
+    color: @accent;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid @accent;
 }
 
-#pulseaudio:hover, #network:hover, #battery:hover, #custom-notification:hover,
-#bluetooth:hover, #clock:hover, #cpu:hover, #memory:hover, #custom-arch-button:hover {
-background: @bg_hover;
-border-radius: 8px;
+#pulseaudio-slider trough {
+    min-height: 80px;
+    min-width: 6px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-#custom-arch-button {
-color: @accent;
-font-size: 18px;
-padding: 15px 0;
-}
-
-#pulseaudio, #network, #battery, #custom-notification {
-color: @accent;
-font-size: 13px;
-padding: 8px 0;
-}
-
-#cpu, #memory {
-font-size: 8px;
-color: @accent;
-padding: 4px 0;
-}
-
-#bluetooth {
-color: @accent;
-font-size: 11px;
-padding: 6px 0;
-}
-
-#clock {
-font-size: 11px;
-color: @text;
-padding: 12px 0;
-}
-
-#custom-power {
-color: #f38ba8;
-font-size: 15px;
-padding: 15px 0;
-}
-
-#tray {
-margin: 5px 2px;
-}
-
-tooltip {
-    background: @background;
-    border: 1px solid @accent;
-    border-radius: 8px;
-}
-
-tooltip label {
-    color: @text;
-    padding: 6px;
+#pulseaudio-slider highlight {
+    background-color: @accent;
+    border-radius: 5px;
 }
